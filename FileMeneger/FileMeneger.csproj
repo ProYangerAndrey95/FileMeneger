@@ -95,18 +95,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image4.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Image5.png" />
   </ItemGroup>
   <ItemGroup>
