@@ -5,15 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FileMeneger"
         mc:Ignorable="d"
-        Title="MainWindow" Height="359" Width="800">
+        Title="MainWindow" Height="359" Width="612">
     <Grid>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="20" Margin="100,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="441" Text="C:\"/>
-        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="268" Margin="101,35,0,0" VerticalAlignment="Top" Width="485" MouseDoubleClick="listBox_MouseDoubleClick" Loaded="listBox_Loaded"/>
-        <Button x:Name="button2" Content="Поиск" HorizontalAlignment="Left" Margin="546,9,0,0" VerticalAlignment="Top" Width="40" Height="20" Click="button2_Click"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="20" Margin="137,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="404" Text="C:\"/>
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="283" Margin="137,35,0,0" VerticalAlignment="Top" Width="449" MouseDoubleClick="listBox_MouseDoubleClick" Loaded="listBox_Loaded"/>
+        <Button x:Name="button2" Content="Поиск" HorizontalAlignment="Left" Margin="546,10,0,0" VerticalAlignment="Top" Width="40" Height="19" Click="button2_Click"/>
         <Button x:Name="button" Content="&lt;----" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="40" Click="button_Click"/>
         <Button x:Name="button1" Content="----&gt;" HorizontalAlignment="Left" Margin="58,10,0,0" VerticalAlignment="Top" Width="37" Click="button1_Click"/>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="684,98,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_1" Content="del" HorizontalAlignment="Left" Margin="619,98,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
