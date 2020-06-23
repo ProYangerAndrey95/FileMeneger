@@ -25,15 +25,14 @@ namespace FileMeneger
         public MainWindow()
         {
             InitializeComponent();
+            zagruzka();
         }
-        //Загрузка файлов и папок -кнопка "перейти" 
-        private void button2_Click(object sender, RoutedEventArgs e)
+        public void zagruzka()
         {
-            
             listBox.Items.Clear();
             DirectoryInfo dir = new DirectoryInfo(textBox.Text);
             DirectoryInfo[] dirs = dir.GetDirectories();
-            foreach(DirectoryInfo crrDir in dirs)
+            foreach (DirectoryInfo crrDir in dirs)
             {
                 listBox.Items.Add(crrDir);
             }
@@ -43,24 +42,19 @@ namespace FileMeneger
                 listBox.Items.Add(crrfile);
             }
         }
+        //Загрузка файлов и папок -кнопка "перейти" 
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            zagruzka();
+        }
         // двойной щелчек по listBox
         private void listBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             if (System.IO.Path.GetExtension(System.IO.Path.Combine(textBox.Text, listBox.SelectedItem.ToString())) == "")
             {
                 textBox.Text = System.IO.Path.Combine(textBox.Text, listBox.SelectedItem.ToString());
-                listBox.Items.Clear();
-                DirectoryInfo dir = new DirectoryInfo(textBox.Text);
-                DirectoryInfo[] dirs = dir.GetDirectories();
-                foreach (DirectoryInfo crrDir in dirs)
-                {
-                    listBox.Items.Add(crrDir);
-                }
-                FileInfo[] files = dir.GetFiles();
-                foreach (FileInfo crrfile in files)
-                {
-                    listBox.Items.Add(crrfile);
-                }
+                zagruzka();
             }
             else { 
                 Process.Start(System.IO.Path.Combine(textBox.Text, listBox.SelectedItem.ToString()));
@@ -83,39 +77,14 @@ namespace FileMeneger
                     textBox.Text = textBox.Text.Remove(textBox.Text.Length - 1, 1);
                 }
             }
-           
-            listBox.Items.Clear();
-            DirectoryInfo dir = new DirectoryInfo(textBox.Text);
-            DirectoryInfo[] dirs = dir.GetDirectories();
-            foreach (DirectoryInfo crrDir in dirs)
-            {
-                listBox.Items.Add(crrDir);
-            }
-            FileInfo[] files = dir.GetFiles();
-            foreach (FileInfo crrfile in files)
-            {
-                listBox.Items.Add(crrfile);
-            }
-        }
-        //Загрузка файлов и папок -кнопка "вперед"
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
 
+            zagruzka();
         }
-        private void listBox_Loaded(object sender, RoutedEventArgs e)
+   
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            listBox.Items.Clear();
-            DirectoryInfo dir = new DirectoryInfo(textBox.Text);
-            DirectoryInfo[] dirs = dir.GetDirectories();
-            foreach (DirectoryInfo crrDir in dirs)
-            {
-                listBox.Items.Add(crrDir);
-            }
-            FileInfo[] files = dir.GetFiles();
-            foreach (FileInfo crrfile in files)
-            {
-                listBox.Items.Add(crrfile);
-            }
+            zagruzka();
         }
     }
 }
